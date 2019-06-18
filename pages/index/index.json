@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "logoComponent":"../../components/LogoComponent/LogoComponent",
+    "CalendarComponent":"../../components/CalendarComponent/CalendarComponent",
+    "MaskComponent":"../../components/MaskComponent/MaskComponent"
+  }
+}

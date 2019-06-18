@@ -1,0 +1,6 @@
+<view class="container">
+    <logoComponent></logoComponent>
+    <CalendarComponent bind:showMaskView="showMaskView" showDesc="{{showDesc}}"></CalendarComponent>
+    <MaskComponent wx:if="{{isShowMask}}" bind:hideMaskView="hideMaskView"></MaskComponent>
+</view>
+

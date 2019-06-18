@@ -1,0 +1,48 @@
+<wxs src="../../utils/fileters.wxs" module="filter"></wxs>
+<view class="calendar" 
+    style="{{activeStyle}}"
+>
+    <!-- 顶部导航栏 -->
+  <view class="topBar {{activeTopBar}}">
+      <view class="statuBar"></view>
+      <view class="navBar">
+          <view class="CancelText" bindtap="closeCalendar">X</view>
+          <view class="calendarIcon">
+              <image src="../../images/calendarIcon.png" style="width:40rpx;height:40rpx"></image>
+          </view>
+          <view></view>
+      </view>
+  </view>
+  <!-- 轮播图 -->
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}"
+   interval="{{interval}}"
+   duration="{{duration}}"
+   current="{{imgUrls.length-1}}"
+   style="width:100%;height:100%"
+   >
+  <block wx:for="{{imgUrls}}" wx:key="{{item._id}}">
+    <swiper-item>
+        <view style="background:url({{baseURL+item.imgURL}}) no-repeat center;background-size:auto 100%;background-position-x:-60px;height:100%">
+            <view class="descriptionView {{activeDescView}}" 
+            bindtransitionend="transitionend">
+                <view class="dailyView">
+                    <view class="daily" style="font-size:80rpx">
+                        {{filter.filterTime(item.daily)[2]}}
+                    </view>
+                    <view class="daily" style="font-size:32rpx">
+                        <text>{{filter.filterTime(item.daily)[1]}}</text>
+                        <text style="margin-left:10px">{{filter.filterTime(item.daily)[3]}}</text>
+                    </view>
+                </view>
+                <view style="font-size:50rpx">{{item.description.content}}</view>
+                <view style="font-size:32rpx">
+                    <text>{{item.description.title}},</text>
+                    <text style="margin-left:10px">{{item.description.author}}</text>
+               </view>
+            </view>
+        </view>
+    </swiper-item>
+  </block>
+</swiper>
+</view>

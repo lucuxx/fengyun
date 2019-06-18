@@ -1,0 +1,39 @@
+.logoView{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:lightblue;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    z-index:999;
+}
+.logo{
+    width:100px;
+    height:100px;
+}
+
+/* logo视图 animation动画 */
+
+@keyframes logo-enter-animation {
+    0% {opacity:0}
+    100% {opacity:1}
+}
+
+.logo-enter-animation {
+    animation: logo-enter-animation 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes logo-leave-animation {
+    0% {opacity:1}
+    100%{opacity:0}
+}
+
+.logo-leave-animation {
+    animation: logo-leave-animation 1s;
+    animation-fill-mode:forwards;
+}

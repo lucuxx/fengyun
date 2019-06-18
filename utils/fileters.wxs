@@ -1,0 +1,9 @@
+var filterTime = function(daily){
+    //获取date对象
+    var date = getDate(parseInt(daily));
+    return date.toDateString().split(" ")
+}
+
+module.exports = {
+    filterTime:filterTime
+}
